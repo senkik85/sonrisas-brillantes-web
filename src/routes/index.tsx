@@ -7,11 +7,9 @@ import {
   ClipboardPlus,
   HeartHandshake,
   HeartPulse,
-  Instagram,
   MailCheck,
   MapPin,
   MessageCircleHeart,
-  Phone,
   ShieldCheck,
   SmilePlus,
   Sparkles,
@@ -136,6 +134,24 @@ function Index() {
     "Comunicación clara para madres y padres",
     "Ambiente cálido, confiable y profesional",
     "Cuidado sensible de dientes temporales y permanentes",
+  ];
+
+  const reviews = [
+    {
+      quote:
+        "Excelente atención con mi hija. La consulta fue muy tranquila, clara y con mucha paciencia en todo momento.",
+      author: "Reseña de Google Maps",
+    },
+    {
+      quote:
+        "Nos explicaron cada paso de forma muy amable. Se nota la experiencia con niños y el enfoque preventivo.",
+      author: "Reseña de Google Maps",
+    },
+    {
+      quote:
+        "Un trato cálido y profesional desde la primera visita. Mi hijo se sintió en confianza y nosotros también.",
+      author: "Reseña de Google Maps",
+    },
   ];
 
   const faqs = [
@@ -440,8 +456,8 @@ function Index() {
         </section>
 
         <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-            <div className="rounded-[34px] border border-border/70 bg-card p-6 sm:p-8">
+          <div className="mx-auto max-w-4xl rounded-[34px] border border-border/70 bg-card p-6 sm:p-8">
+            <div>
               <Badge className="rounded-full border-transparent bg-brand/30 px-4 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-brand-foreground shadow-none">
                 Diferenciadores
               </Badge>
@@ -459,44 +475,37 @@ function Index() {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
 
-            <div className="relative overflow-hidden rounded-[34px] border border-border/70 bg-card p-6 sm:p-8">
-              <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-brand/20 blur-3xl" />
-              <div className="relative z-10 grid gap-6 sm:grid-cols-[0.8fr_1.2fr] sm:items-center">
-                <img
-                  src={portraitPrimary}
-                  alt="Fotografía cercana de la Dra. Laura Díaz de León en un ambiente profesional y amable"
-                  className="aspect-[4/5] w-full rounded-[28px] object-cover object-center"
-                  loading="lazy"
-                />
-                <div>
-                  <div className="flex items-center gap-2 text-primary">
-                    <Star className="size-4 fill-current" />
-                    <Star className="size-4 fill-current" />
-                    <Star className="size-4 fill-current" />
-                    <Star className="size-4 fill-current" />
-                    <Star className="size-4 fill-current" />
-                  </div>
-                  <p className="mt-4 text-2xl font-semibold leading-tight text-foreground">
-                    “Cada sonrisa infantil merece atención profesional, paciencia y un entorno de confianza.”
-                  </p>
-                  <p className="mt-4 text-sm leading-7 text-muted-foreground">
-                    Una landing enfocada en conversión también debe transmitir tranquilidad. Por eso,
-                    esta sección refuerza la cercanía humana de la doctora antes del contacto.
-                  </p>
-                  <div className="mt-6 flex flex-wrap gap-3 text-sm text-muted-foreground">
-                    <span className="inline-flex items-center gap-2 rounded-full bg-surface-soft px-4 py-2">
-                      <MapPin className="size-4 text-primary" /> [DIRECCIÓN]
-                    </span>
-                    <span className="inline-flex items-center gap-2 rounded-full bg-surface-soft px-4 py-2">
-                      <Phone className="size-4 text-primary" /> [TELÉFONO]
-                    </span>
-                    <span className="inline-flex items-center gap-2 rounded-full bg-surface-soft px-4 py-2">
-                      <Instagram className="size-4 text-primary" /> [INSTAGRAM / RED SOCIAL]
-                    </span>
-                  </div>
-                </div>
-              </div>
+        <section className="bg-surface-soft/50 py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <Badge className="rounded-full border-transparent bg-primary/10 px-4 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-primary shadow-none">
+                Opiniones de familias
+              </Badge>
+              <h2 className="mt-5 text-3xl font-semibold leading-tight sm:text-4xl">
+                Tres reseñas de 5 estrellas para reforzar confianza antes del contacto.
+              </h2>
+              <p className="mt-5 text-base leading-8 text-muted-foreground">
+                Aquí colocaremos testimonios reales extraídos de Google Maps. Por ahora dejé tres espacios listos para reemplazarlos por las opiniones finales.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-5 lg:grid-cols-3">
+              {reviews.map((review, index) => (
+                <Card key={index} className="rounded-[28px] border-border/70 bg-card/95 shadow-none">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-2 text-primary">
+                      {Array.from({ length: 5 }).map((_, starIndex) => (
+                        <Star key={starIndex} className="size-4 fill-current" />
+                      ))}
+                    </div>
+                    <p className="mt-5 text-base leading-7 text-foreground">“{review.quote}”</p>
+                    <p className="mt-5 text-sm font-medium text-muted-foreground">{review.author}</p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
