@@ -6,7 +6,9 @@ import {
   CheckCircle2,
   ClipboardPlus,
   HeartHandshake,
+  HeartPulse,
   Instagram,
+  MailCheck,
   MapPin,
   MessageCircleHeart,
   Phone,
@@ -15,7 +17,6 @@ import {
   Sparkles,
   Star,
   Stethoscope,
-  Tooth,
 } from "lucide-react";
 
 import { ContactForm } from "@/components/landing/contact-form";
@@ -415,7 +416,7 @@ function Index() {
                   <CardHeader className="space-y-4">
                     <div className="flex size-12 items-center justify-center rounded-2xl bg-brand/25 text-brand-foreground">
                       {index % 4 === 0 ? (
-                        <Tooth className="size-5" />
+                        <HeartPulse className="size-5" />
                       ) : index % 4 === 1 ? (
                         <SmilePlus className="size-5" />
                       ) : index % 4 === 2 ? (
