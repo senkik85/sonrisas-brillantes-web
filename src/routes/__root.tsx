@@ -29,19 +29,35 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Odontopediatra en Aguascalientes | Dra. Laura Díaz de León" },
+      {
+        name: "description",
+        content:
+          "Landing de odontopediatría infantil en Aguascalientes para madres y padres que buscan prevención, confianza y atención dental cálida para sus hijos.",
+      },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      {
+        property: "og:title",
+        content: "Odontopediatría con amor | Dra. Laura Díaz de León",
+      },
+      {
+        property: "og:description",
+        content:
+          "Odontóloga pediatra en Aguascalientes con enfoque preventivo, atención cálida y acompañamiento cercano para familias con niños.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "robots", content: "index, follow" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      {
+        rel: "canonical",
+        href: "https://id-preview--a0121dec-6279-4bbd-815f-a9683a08b742.lovable.app/",
       },
     ],
   }),
