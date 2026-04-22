@@ -1,4 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
+import { getRequest } from "@tanstack/react-start/server";
 
 import { contactFormSchema, type ContactFormValues } from "@/lib/contact-schema";
 
@@ -16,7 +17,10 @@ type ContactSubmissionResult = {
 export const submitContactForm = createServerFn({ method: "POST" })
   .inputValidator(contactFormSchema)
   .handler(async ({ data }): Promise<ContactSubmissionResult> => {
-    const response = await fetch(`${new URL("/api/public/contact", "http://localhost").pathname}`, {
+    const request = getRequest();
+    const origin = request ? new URL(request.url).origin : "http://localhost";
+
+    const response = await fetch(new URL("/api/public/contact", origin), {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
