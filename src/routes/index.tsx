@@ -126,6 +126,7 @@ function Index() {
     "Bruxismo, chuparse el dedo u otros hábitos orales",
     "Revisión preventiva y control del desarrollo dental",
     "Orientación sobre higiene, alimentación y rutina de cepillado",
+    "Erupción dental tardía o dudas sobre el cambio de dientes",
   ];
 
   const benefits = [
@@ -371,7 +372,7 @@ function Index() {
         </section>
 
         <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-start">
+          <div className="mx-auto max-w-5xl">
             <div>
               <Badge className="rounded-full border-transparent bg-brand/30 px-4 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-brand-foreground shadow-none">
                 Cuándo acudir
@@ -385,7 +386,7 @@ function Index() {
                 infantil funciona mejor cuando se inicia a tiempo.
               </p>
             </div>
-            <div className="grid gap-3">
+            <div className="mt-8 grid gap-3 md:grid-cols-2">
               {visitMoments.map((item) => (
                 <div key={item} className="flex items-start gap-3 rounded-[24px] border border-border/70 bg-card p-4 shadow-sm">
                   <CheckCircle2 className="mt-1 size-5 shrink-0 text-primary" />
