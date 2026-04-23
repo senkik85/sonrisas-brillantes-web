@@ -62,9 +62,9 @@ export const Route = createFileRoute("/")({
           },
           address: {
             "@type": "PostalAddress",
-            addressLocality: "[CITY]: Aguascalientes",
-            addressRegion: "[STATE]: Aguascalientes",
-            streetAddress: "[DIRECCIÓN]",
+            addressLocality: "Aguascalientes",
+            addressRegion: "Aguascalientes",
+            streetAddress: "Calle 26 de marzo 302, Fracc. Del Valle I",
           },
           telephone: "[TELÉFONO]",
           email: "[EMAIL_DE_RECEPCIÓN]",
@@ -258,12 +258,12 @@ function Index() {
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
                 {[
                   ["Especialidad", "Odontopediatría pediátrica con enfoque preventivo"],
-                  ["Ubicación", "[CITY]: Aguascalientes, [STATE]: Aguascalientes"],
+                  ["Ubicación", "Calle 26 de marzo 302,\nFracc. Del Valle I\nAguascalientes"],
                   ["Contacto", "WhatsApp, formulario y atención con seguimiento"],
                 ].map(([label, value]) => (
                   <div key={label} className="rounded-[24px] border border-border/70 bg-card/80 p-4 shadow-sm backdrop-blur">
                     <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">{label}</p>
-                    <p className="mt-2 text-sm leading-6 text-foreground">{value}</p>
+                    <p className="mt-2 whitespace-pre-line text-sm leading-6 text-foreground">{value}</p>
                   </div>
                 ))}
               </div>
@@ -555,7 +555,7 @@ function Index() {
                 <div className="grid gap-5">
                   {[
                     { label: "Correo de recepción", value: "DESTINATION_EMAIL", icon: MailCheck },
-                    { label: "Ciudad", value: "[CITY]: Aguascalientes", icon: MapPin },
+                    { label: "Dirección", value: "Calle 26 de marzo 302, Fracc. Del Valle I", icon: MapPin },
                     { label: "Horarios", value: "[HORARIOS]", icon: CalendarHeart },
                   ].map(({ label, value, icon: Icon }) => (
                     <div key={label}>
