@@ -7,8 +7,6 @@ import {
   ClipboardPlus,
   HeartHandshake,
   HeartPulse,
-  MailCheck,
-  MapPin,
   MessageCircleHeart,
   ShieldCheck,
   SmilePlus,
@@ -22,7 +20,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { CONTACT_CONFIG } from "@/lib/contact-schema";
 import portraitPrimary from "@/assets/dra-laura-portrait-1.png";
 import portraitSecondary from "@/assets/dra-laura-portrait-2.png";
