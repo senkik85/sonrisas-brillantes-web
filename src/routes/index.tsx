@@ -536,62 +536,19 @@ function Index() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8" id="contacto">
-          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-            <div className="space-y-6">
-              <Badge className="rounded-full border-transparent bg-brand/30 px-4 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-brand-foreground shadow-none">
-                Contacto y seguimiento
-              </Badge>
-              <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
-                Agenda una primera conversación y recibe orientación sobre la atención que necesita tu hijo.
-              </h2>
-              <p className="text-base leading-8 text-muted-foreground">
-                Puedes escribir por WhatsApp o completar el formulario. La experiencia quedó lista para
-                conectar un servicio real de correo con placeholders claros: <strong className="text-foreground">DESTINATION_EMAIL</strong>
-                y <strong className="text-foreground">CONTACT_FORM_WEBHOOK_URL</strong>.
-              </p>
-
-              <div className="rounded-[30px] border border-border/70 bg-card p-6">
-                <div className="grid gap-5">
-                  {[
-                    { label: "Correo de recepción", value: "DESTINATION_EMAIL", icon: MailCheck },
-                    { label: "Dirección", value: "Calle 26 de marzo 302, Fracc. Del Valle I", icon: MapPin },
-                    { label: "Horarios", value: "[HORARIOS]", icon: CalendarHeart },
-                  ].map(({ label, value, icon: Icon }) => (
-                    <div key={label}>
-                      <div className="flex items-center gap-3">
-                        <div className="flex size-10 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                          <Icon className="size-5" />
-                        </div>
-                        <div>
-                          <p className="text-sm font-semibold text-foreground">{label}</p>
-                          <p className="text-sm text-muted-foreground">{value}</p>
-                        </div>
-                      </div>
-                      <Separator className="mt-5" />
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <Button asChild size="lg" className="h-12 rounded-full px-6 text-base font-semibold">
-                    <a href={whatsappHref} target="_blank" rel="noreferrer">
-                      Enviar WhatsApp
-                    </a>
-                  </Button>
-                  <Button
-                    asChild
-                    size="lg"
-                    variant="outline"
-                    className="h-12 rounded-full border-border/80 bg-background/70 px-6 text-base font-semibold"
-                  >
-                    <a href="mailto:DESTINATION_EMAIL">Escribir por correo</a>
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            <ContactForm />
+        <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8" id="contacto">
+          <div className="mb-8 space-y-4 text-center">
+            <Badge className="rounded-full border-transparent bg-brand/30 px-4 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-brand-foreground shadow-none">
+              Contacto y seguimiento
+            </Badge>
+            <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
+              Agenda una primera conversación y recibe orientación sobre la atención que necesita tu hijo.
+            </h2>
+            <p className="text-base leading-8 text-muted-foreground">
+              Completa el formulario y te responderemos a la brevedad.
+            </p>
           </div>
+          <ContactForm />
         </section>
       </main>
 
