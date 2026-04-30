@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 
 import { ContactForm } from "@/components/landing/contact-form";
+import { SurveyForm } from "@/components/landing/survey-form";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
