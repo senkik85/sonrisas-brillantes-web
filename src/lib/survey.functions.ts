@@ -50,9 +50,10 @@ export const submitSurvey = createServerFn({ method: "POST" })
     });
 
     const range = `${SHEET_NAME}!A:D`;
-    const url = `${GATEWAY_URL}/spreadsheets/${SPREADSHEET_ID}/values/${encodeURIComponent(
-      range,
-    )}:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
+    // IMPORTANT: do NOT encodeURIComponent the range — the gateway/Sheets API
+    // requires the colon and exclamation to remain as-is. fetch() will encode
+    // the space in "Hoja 1" to %20 automatically.
+    const url = `${GATEWAY_URL}/spreadsheets/${SPREADSHEET_ID}/values/${range}:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
 
     try {
       const response = await fetch(url, {
