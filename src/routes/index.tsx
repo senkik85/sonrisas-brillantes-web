@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 
 import { ContactForm } from "@/components/landing/contact-form";
+import { SurveyForm } from "@/components/landing/survey-form";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -472,6 +473,12 @@ function Index() {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl">
+            <SurveyForm />
           </div>
         </section>
 
