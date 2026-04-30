@@ -49,10 +49,12 @@ export const submitSurvey = createServerFn({ method: "POST" })
       timeZone: "America/Mexico_City",
     });
 
-    const range = `${SHEET_NAME}!A:D`;
-    const url = `${GATEWAY_URL}/spreadsheets/${SPREADSHEET_ID}/values/${encodeURIComponent(
-      range,
-    )}:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
+    // IMPORTANT: the Sheets API does NOT decode %20 in URL path segments, so
+    // we must replace spaces in the sheet name with '+' (which Sheets parses
+    // as a space). Do NOT encodeURIComponent the whole range — the ':' and
+    // '!' must remain literal.
+    const rangePath = `${SHEET_NAME.replace(/ /g, "+")}!A:D:append`;
+    const url = `${GATEWAY_URL}/spreadsheets/${SPREADSHEET_ID}/values/${rangePath}?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
 
     try {
       const response = await fetch(url, {
